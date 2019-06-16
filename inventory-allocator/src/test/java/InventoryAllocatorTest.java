@@ -11,15 +11,18 @@ import java.util.Scanner;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
 
+@TestInstance(Lifecycle.PER_CLASS)
 class InventoryAllocatorTest {
 
-	final static String testCaseFile = "./test/TestCaseFile.txt";
+	final static String testCaseFileName = "TestCaseFile.txt";
 	static InventoryAllocator allocator;
 	static Map<String, InventoryAllocatorTestCase> testCases;
 	
 	@BeforeAll
-	public static void beforeAll() {
+	public void beforeAll() {
 		allocator = new InventoryAllocator();
 		testCases = new HashMap<String, InventoryAllocatorTestCase>();
 		loadTestCases();
@@ -88,14 +91,14 @@ class InventoryAllocatorTest {
 		assertEquals(testCases.get(testCaseIdentificationKey).getOutput(), allocator.getCheapestShipment(input.getOrder(), input.getWarehouses()));
 	}
 	
-	static void loadTestCases() {
-		File file = new File(testCaseFile);
+	void loadTestCases() {
+		File file = new File(getClass().getClassLoader().getResource(testCaseFileName).getFile());
 		@SuppressWarnings("resource")
 		Scanner fileReader = null;
 		try {
 			fileReader = new Scanner(file);
 		} catch (FileNotFoundException e) {
-			System.out.println("ERROR: Could not load test cases from file=" + testCaseFile);
+			System.out.println("ERROR: Could not load test cases from file=" + testCaseFileName);
 			System.exit(0);
 		}
 		
