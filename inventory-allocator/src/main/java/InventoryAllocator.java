@@ -3,8 +3,21 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author Kapil
+ * @purpose This class implements the functionality of an Inventory allocator.
+ *          It contains the function to compute the cheapest shipment details
+ *          for an order based on the selected warehouses.
+ */
 public final class InventoryAllocator {
 
+	/**
+	 * @param order
+	 * @param warehouses
+	 * @return
+	 * @purpose This method computes the cheapest shipment for the provided order
+	 *          based on the selected warehouses.
+	 */
 	public List<Map<String, Map<String, Integer>>> getCheapestShipment(Order order, List<Warehouse> warehouses) {
 
 		// final shipment
@@ -36,7 +49,15 @@ public final class InventoryAllocator {
 		return orderShipment;
 	}
 
-	public void findCheapestShipment(List<Map<String, Map<String, Integer>>> orderShipment,
+	/**
+	 * @param orderShipment
+	 * @param orderedItems
+	 * @param warehouses
+	 * @purpose This is a utility method for the getCheapestShipment method. It
+	 *          finds the cheapest shipment by iterating over the warehouses and
+	 *          ordered items.
+	 */
+	private void findCheapestShipment(List<Map<String, Map<String, Integer>>> orderShipment,
 			Map<String, Integer> orderedItems, List<Warehouse> warehouses) {
 
 		for (Warehouse warehouse : warehouses) {
@@ -66,6 +87,14 @@ public final class InventoryAllocator {
 
 	}
 
+	/**
+	 * @param orderedItems
+	 * @param warehouse
+	 * @param itemsSupplied
+	 * @purpose This is a utility method for the findCheapestShipment method. This
+	 *          method finds the items which the provided warehouse can ship that
+	 *          are required to fulfill the order.
+	 */
 	private void fulFillOrder(Map<String, Integer> orderedItems, Warehouse warehouse,
 			Map<String, Integer> itemsSupplied) {
 
@@ -85,6 +114,14 @@ public final class InventoryAllocator {
 
 	}
 
+	/**
+	 * @param orderedItems
+	 * @param itemsSupplied
+	 * @purpose This is a utility method for the findCheapestShipment method. It
+	 *          helps in tracking the items from the order that have been shipped by
+	 *          a warehouse. It removes those items from the stored list of ordered
+	 *          items.
+	 */
 	private void updateOrderedItems(Map<String, Integer> orderedItems, Map<String, Integer> itemsSupplied) {
 
 		for (Map.Entry<String, Integer> item : itemsSupplied.entrySet()) {

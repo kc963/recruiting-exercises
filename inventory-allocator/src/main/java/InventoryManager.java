@@ -1,14 +1,19 @@
-// Class : InventoryManager
-// Purpose : To show the utilization of InventoryAllocator class
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author Kapil
+ * @purpose This class is a dummy class to show the usage of InventoryAllocator
+ *          class.
+ */
 public class InventoryManager {
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
 		// Prepare Order
