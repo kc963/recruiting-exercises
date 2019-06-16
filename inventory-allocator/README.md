@@ -81,7 +81,7 @@ The testing class also uses a text file which contains all the testcases in a se
 
 Once you have maven installed in your system, proceed with the commands written below.
 
-**Build the project and install dependencies**: `maven clean install`
+**Build the project and install dependencies**: `mvn clean install`
 
 **Run the tests**: `mvn test`
 This command runs all the tests present in the InventoryAllocatorTest class.
