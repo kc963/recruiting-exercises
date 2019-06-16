@@ -79,7 +79,7 @@ The testing class also uses a text file which contains all the testcases in a se
 
 ### Execution Instructions
 
-Once you have maven installed in your system, proceed with the commands written below.
+Once you have maven installed in your system, open command window on the inventory-allocator directory (which contains the pom.xml file) and proceed with the commands written below.
 
 **Build the project and install dependencies**: `mvn clean install`
 
