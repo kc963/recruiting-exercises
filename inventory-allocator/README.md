@@ -52,3 +52,42 @@ We'll evaluate your code via the following guidelines in no particular order:
 2. **Correctness**: is the solution correct and does it solve the problem
 1. **Test Code Quality**: Is the test code comperehensive and covering all cases.
 1. **Tool/Language mastery**: is the code using up to date syntax and techniques. 
+
+### Solution Instructions
+
+The solution contains 4 classes:
+1. **Order**: represents the input order entity.
+2. **Warehouse**: represents the warehouse entity which has a name and an inventory.
+3. **InventoryAllocator**: contains the getCheapestShipment method along with other helper methods.
+4. **InventoryManager**: a dummy class to show the usage of InventoryAllocator class.
+These classes are present in the src/main/java directory.
+
+The solution also performs unit testing on the InventoryAllocator class. The code for testing is present in the src/test/java directory. This directory contains 3 files.
+1. **InventoryAllocatorInput**: represents a datatype that houses the input (order and list of warehouses) which is provided to the getCheapestShipment method of the InventoryAllocator class.
+2. **InventoryAllocatorTestCase**: represents a testcase which has a name along with the input and corresponding output for that input. This testcase is used to test the getCheapestShipment method of the InventoryAllocator class.
+3. **InventoryAllocatorTest**: the main testing class which contains the different testcases to test the getCheapestShipment method of the InventoryAllocator class.
+
+The testing class also uses a text file which contains all the testcases in a sequence. This file is present in the sec/test/resources directory with name 'TestCaseFile.txt'. The InventoryAllocatorTest class contains a loadTestCases method which access this file and generates all the testcases.
+
+
+##### Development Environment Configuration
+1. Java version: 9.0.4
+2. Apache Maven version: 3.5.4
+
+##### Dependencies (Handled by Maven)
+1. JUnit5-jupiter
+
+### Execution Instructions
+
+Once you have maven installed in your system, proceed with the commands written below.
+
+**Build the project and install dependencies**: 'maven clean install'
+
+**Run the tests**: 'mvn test'
+This command runs all the tests present in the InventoryAllocatorTest class.
+
+**Run the main class**: 'mvn exec:java -Dexec.mainClass="InventoryManager"'
+This command runs the main class which is 'InventoryManager'. The main class contains a dummy order and list of warehouses and it provides them as the input to the getCheapestShipment method of the InventoryAllocator class and displays the results on console.
+
+
+
