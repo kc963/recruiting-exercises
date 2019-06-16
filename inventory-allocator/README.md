@@ -67,7 +67,7 @@ The solution also performs unit testing on the InventoryAllocator class. The cod
 2. **InventoryAllocatorTestCase**: represents a testcase which has a name along with the input and corresponding output for that input. This testcase is used to test the getCheapestShipment method of the InventoryAllocator class.
 3. **InventoryAllocatorTest**: the main testing class which contains the different testcases to test the getCheapestShipment method of the InventoryAllocator class.
 
-The testing class also uses a text file which contains all the testcases in a sequence. This file is present in the sec/test/resources directory with name 'TestCaseFile.txt'. The InventoryAllocatorTest class contains a loadTestCases method which access this file and generates all the testcases.
+The testing class also uses a text file which contains all the testcases in a sequence. This file is present in the sec/test/resources directory with name `TestCaseFile.txt`. The InventoryAllocatorTest class contains a loadTestCases method which access this file and generates all the testcases.
 
 
 #### Development Environment Configuration
@@ -79,7 +79,7 @@ The testing class also uses a text file which contains all the testcases in a se
 
 ### Execution Instructions
 
-Once you have maven installed in your system, open command window on the inventory-allocator directory (which contains the pom.xml file) and proceed with the commands written below.
+Once you have maven installed in your system, open command window on the inventory-allocator directory (which contains the `pom.xml` file) and proceed with the commands written below.
 
 **Build the project and install dependencies**: `mvn clean install`
 
@@ -87,7 +87,7 @@ Once you have maven installed in your system, open command window on the invento
 This command runs all the tests present in the InventoryAllocatorTest class.
 
 **Run the main class**: `mvn exec:java -Dexec.mainClass="InventoryManager"`
-This command runs the main class which is 'InventoryManager'. The main class contains a dummy order and list of warehouses and it provides them as the input to the getCheapestShipment method of the InventoryAllocator class and displays the results on console.
+This command runs the main class which is `InventoryManager`. The main class contains a dummy order and list of warehouses and it provides them as the input to the getCheapestShipment method of the InventoryAllocator class and displays the results on console.
 
 
 
