@@ -17,9 +17,9 @@ import org.junit.jupiter.api.TestInstance.Lifecycle;
 @TestInstance(Lifecycle.PER_CLASS)
 class InventoryAllocatorTest {
 
-	final static String testCaseFileName = "TestCaseFile.txt";
-	static InventoryAllocator allocator;
-	static Map<String, InventoryAllocatorTestCase> testCases;
+	final String testCaseFileName = "TestCaseFile.txt";
+	InventoryAllocator allocator;
+	Map<String, InventoryAllocatorTestCase> testCases;
 	
 	@BeforeAll
 	public void beforeAll() {
@@ -31,64 +31,82 @@ class InventoryAllocatorTest {
 	@Test
 	void testGetCheapestShipment_NullOrder() throws IOException {
 		String testCaseIdentificationKey = "NullOrder";
+		System.out.println("\nRunning test : " + testCaseIdentificationKey);
 		InventoryAllocatorInput input = testCases.get(testCaseIdentificationKey).getInput();
 		assertEquals(testCases.get(testCaseIdentificationKey).getOutput(), allocator.getCheapestShipment(input.getOrder(), input.getWarehouses()));
+		System.out.println("Test case completed : " + testCaseIdentificationKey);
 	}
 	
 	@Test
 	void testGetCheapestShipment_NullWarehouseList() throws IOException {
 		String testCaseIdentificationKey = "NullWarehouseList";
+		System.out.println("\nRunning test : " + testCaseIdentificationKey);
 		InventoryAllocatorInput input = testCases.get(testCaseIdentificationKey).getInput();
 		assertEquals(testCases.get(testCaseIdentificationKey).getOutput(), allocator.getCheapestShipment(input.getOrder(), input.getWarehouses()));
+		System.out.println("Test case completed : " + testCaseIdentificationKey);
 	}
 	
 	@Test
 	void testGetCheapestShipment_NoOrderedItem() throws IOException {
 		String testCaseIdentificationKey = "NoOrderedItem";
+		System.out.println("\nRunning test : " + testCaseIdentificationKey);
 		InventoryAllocatorInput input = testCases.get(testCaseIdentificationKey).getInput();
 		assertEquals(testCases.get(testCaseIdentificationKey).getOutput(), allocator.getCheapestShipment(input.getOrder(), input.getWarehouses()));
+		System.out.println("Test case completed : " + testCaseIdentificationKey);
 	}
 	
 	@Test
 	void testGetCheapestShipment_NoWarehouses() throws IOException {
 		String testCaseIdentificationKey = "NoWarehouses";
+		System.out.println("\nRunning test : " + testCaseIdentificationKey);
 		InventoryAllocatorInput input = testCases.get(testCaseIdentificationKey).getInput();
 		assertEquals(testCases.get(testCaseIdentificationKey).getOutput(), allocator.getCheapestShipment(input.getOrder(), input.getWarehouses()));
+		System.out.println("Test case completed : " + testCaseIdentificationKey);
 	}
 	
 	@Test
 	void testGetCheapestShipment_NoOrderedItemAvailable() throws IOException {
 		String testCaseIdentificationKey = "NoOrderedItemAvailable";
+		System.out.println("\nRunning test : " + testCaseIdentificationKey);
 		InventoryAllocatorInput input = testCases.get(testCaseIdentificationKey).getInput();
 		assertEquals(testCases.get(testCaseIdentificationKey).getOutput(), allocator.getCheapestShipment(input.getOrder(), input.getWarehouses()));
+		System.out.println("Test case completed : " + testCaseIdentificationKey);
 	}
 	
 	@Test
 	void testGetCheapestShipment_SomeOrderedItemsAvailable() throws IOException {
 		String testCaseIdentificationKey = "SomeOrderedItemsAvailable";
+		System.out.println("\nRunning test : " + testCaseIdentificationKey);
 		InventoryAllocatorInput input = testCases.get(testCaseIdentificationKey).getInput();
 		assertEquals(testCases.get(testCaseIdentificationKey).getOutput(), allocator.getCheapestShipment(input.getOrder(), input.getWarehouses()));
+		System.out.println("Test case completed : " + testCaseIdentificationKey);
 	}
 	
 	@Test
 	void testGetCheapestShipment_LessQuantityAvailableInWarehouses() throws IOException {
 		String testCaseIdentificationKey = "LessQuantityAvailableInWarehouses";
+		System.out.println("\nRunning test : " + testCaseIdentificationKey);
 		InventoryAllocatorInput input = testCases.get(testCaseIdentificationKey).getInput();
 		assertEquals(testCases.get(testCaseIdentificationKey).getOutput(), allocator.getCheapestShipment(input.getOrder(), input.getWarehouses()));
+		System.out.println("Test case completed : " + testCaseIdentificationKey);
 	}
 	
 	@Test
 	void testGetCheapestShipment_AllOrderedItemsAvailableInOneWarehouse() {
 		String testCaseIdentificationKey = "AllOrderedItemsAvailableInOneWarehouse";
+		System.out.println("\nRunning test : " + testCaseIdentificationKey);
 		InventoryAllocatorInput input = testCases.get(testCaseIdentificationKey).getInput();
 		assertEquals(testCases.get(testCaseIdentificationKey).getOutput(), allocator.getCheapestShipment(input.getOrder(), input.getWarehouses()));
+		System.out.println("Test case completed : " + testCaseIdentificationKey);
 	}
 	
 	@Test
 	void testGetCheapestShipment_AllOrderedItemsAvailableAndSpreadOut() {
 		String testCaseIdentificationKey = "AllOrderedItemsAvailableAndSpreadOut";
+		System.out.println("\nRunning test : " + testCaseIdentificationKey);
 		InventoryAllocatorInput input = testCases.get(testCaseIdentificationKey).getInput();
 		assertEquals(testCases.get(testCaseIdentificationKey).getOutput(), allocator.getCheapestShipment(input.getOrder(), input.getWarehouses()));
+		System.out.println("Test case completed : " + testCaseIdentificationKey);
 	}
 	
 	void loadTestCases() {
@@ -175,6 +193,8 @@ class InventoryAllocatorTest {
 			testCases.put(name, testCase);
 			
 		}
+		
+		System.out.println("All test cases loaded. Number of TestCases = " + testCases.size());
 		
 	}
 

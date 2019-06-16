@@ -42,11 +42,3 @@ public class Warehouse {
 	}
 	
 }
-
-//	Warehouse
-//		name
-//		inventory
-//
-//
-//
-//
