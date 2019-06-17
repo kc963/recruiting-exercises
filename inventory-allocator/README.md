@@ -69,12 +69,16 @@ The solution also performs unit testing on the InventoryAllocator class. The cod
 
 The testing class also uses a text file which contains all the testcases in a sequence. This file is present in the sec/test/resources directory with name `TestCaseFile.txt`. The InventoryAllocatorTest class contains a loadTestCases method which access this file and generates all the testcases.
 
+#### Assumptions
+1. The purpose of getCheapestShipment method is to compute the cheapest way of fulfilling the order. Updating the inventory of warehouses is not one of its responsibilities.
+2. Negative quantities provided for any item means the item is not present or required.
+3. In case the order cannot be fulfilled, the program needs to display an error message on the console and exit gracefully after returning the result which will be an empty list.  
 
 #### Development Environment Configuration
 1. Java version: 9.0.4
 2. Apache Maven version: 3.5.4
 
-#### Dependencies (Handled by Maven)
+#### Dependencies (Managed by Maven)
 1. JUnit5-jupiter
 
 ### Execution Instructions
