@@ -53,6 +53,8 @@ We'll evaluate your code via the following guidelines in no particular order:
 1. **Test Code Quality**: Is the test code comperehensive and covering all cases.
 1. **Tool/Language mastery**: is the code using up to date syntax and techniques. 
 
+---
+
 ### Solution Instructions
 
 The solution contains 4 classes:
