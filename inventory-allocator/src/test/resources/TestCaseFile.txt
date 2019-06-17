@@ -1,3 +1,21 @@
+// Author: Kapil
+// Instructions on writing test case
+// 1. The first line starts with '#' character followed by the testcase name.
+//	This name is used in the test file to fetch the testcase.
+// 2. The last line of the test case should be a '$' character to indicate the end of test case.
+// 3. The order is provided in a single line starting with "Order:" followed by the items and 
+//	their quantity with an equal sign ('=') between them. The different items are 
+//	separated by a colon (':') character.
+// 4. The warehouses can be provided in multiple lines with each line containing the warehouse
+//	name and inventory. The warehouse input should start with "Warehouse:" followed by the 
+//	warehouse name and ':'. After this, the items in the inventory are mentioned with an 
+//	'=' sign between item name and quantity and different items separated by ':'.
+// 5. The output is provided in as many lines as the number of warehouses in the result. Each 
+//	of these line starts with "Result:" followed by the warehouse name and item and 
+//	quantity in a similar way as described in warehouse.
+// 6. An empty order or result can be provided by mentioning the keyword "Order" or "Result" 
+//	in a line.
+//
 #NullOrder
 Warehouse:W1:apple=5:mango=5:banana=5
 Warehouse:W2:orange=2:apple=4
