@@ -75,7 +75,7 @@ The testing class also uses a text file which contains all the testcases in a se
 1. The purpose of getCheapestShipment method is to compute the cheapest way of fulfilling the order. Updating the inventory of warehouses is not one of its responsibilities.
 2. Negative quantities provided for any item means the item is not present or required.
 3. In case the order cannot be fulfilled, the program needs to display an error message on the console and exit gracefully after returning the result which will be an empty list.  
-4. Cost of shipping an order (all the items ordered by the user or less) from a warehouse is contant and the list of warehouses provided as input is sorted based on cost of shipping. 
+4. Cost of shipping an item (one quantity) from a warehouse is contant and the list of warehouses provided as input is sorted based on cost of shipping. 
 
 #### Development Environment Configuration
 1. Java version: 9.0.4
